@@ -1,0 +1,5 @@
+transformers
+deepeval
+torch
+accelerate
+bitsandbytes
