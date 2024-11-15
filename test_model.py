@@ -9,14 +9,15 @@ metric = GEval(
         LLMTestCaseParams.INPUT,
         LLMTestCaseParams.ACTUAL_OUTPUT,
     ],
-    criteria='User request is given in the input. Responses of two models are '
-             'given in the actual output in the following form: '
-             'Model 1 response:"response"\n\nModel 2 response:"response". '
-             'Give score 0 if you like model 1 response more, give score '
-             '0.5 if you like responses the same and give score 1 if you like '
-             'the model 2 response more. Pay attention to the correctness '
-             'of math facts and calculations.',
-    model="gpt-4o-mini"
+    evaluation_steps=[
+        "Read the user request from the input carefully to understand the context and requirements.",
+        "Compare the responses of Model 1 and Model 2 for relevance, correctness, and clarity based on the user request.",
+        "Evaluate the mathematical correctness of any facts or calculations presented in both model responses.",
+        "Assign 0 score if the response of Model 1 is better, 5 score if responses are equally good, and 10 score if Model 2 response is better."
+    ],
+    model="gpt-4o-mini",
+    verbose_mode=True,
+    threshold=0.7
 )
 
 comp_dataset = EvaluationDataset()
