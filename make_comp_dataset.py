@@ -8,8 +8,8 @@ FT_MODEL = "RLHF-And-Friends/Llama-3.2-3B-Instruct-DPO-Math"
 BATCH_SIZE = 16
 
 CONCATINATION_TEMPLATE = lambda base_resp, ft_resp: (
-    f"Base model response: '{base_resp}'\n\n"
-    f"Evaluated model response: '{ft_resp}'"
+    f"Model 1 response: '{base_resp}'\n\n"
+    f"Model 2 response: '{ft_resp}'"
 )
 # =============================================================================
 

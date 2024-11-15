@@ -11,10 +11,12 @@ metric = GEval(
     ],
     criteria='User request is given in the input. Responses of two models are '
              'given in the actual output in the following form: '
-             'Base model response:"response"\n\nEvaluated model response:"response". '
-             'Give a bigger score if you like evaluated models reponse more '
-             'and less score it you like base model response more. Pay '
-             'attention to the correctness of math facts and calculations.'
+             'Model 1 response:"response"\n\nModel 2 response:"response". '
+             'Give score 0 if you like model 1 response more, give score '
+             '0.5 if you like responses the same and give score 1 if you like '
+             'the model 2 response more. Pay attention to the correctness '
+             'of math facts and calculations.',
+    model="gpt-4o-mini"
 )
 
 comp_dataset = EvaluationDataset()
