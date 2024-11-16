@@ -1,0 +1,4 @@
+.venv
+.deepeval*
+__pycache__
+eval_results.txt
